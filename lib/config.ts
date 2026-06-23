@@ -90,4 +90,12 @@ export const calculators: CalculatorMeta[] = [
       "Calcula la retención de IRPF sobre tu salario bruto según los tramos del impuesto vigentes en 2026.",
     keyword: "calculadora irpf 2026",
   },
+  {
+    slug: "nomina",
+    title: "Calculadora de nómina: de bruto a neto",
+    shortTitle: "Nómina",
+    description:
+      "Calcula tu salario neto a partir del bruto. Descuenta la Seguridad Social y el IRPF y ve exactamente cuánto cobrarás cada mes.",
+    keyword: "calculadora nomina bruto neto",
+  },
 ];

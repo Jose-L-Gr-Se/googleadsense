@@ -15,17 +15,18 @@ export default function Page() {
   return (
     <ArticleShell meta={meta}>
       <p>
-        Una hipoteca de 200.000 euros es una de las más comunes en España. Antes de
-        firmar, es fundamental saber exactamente cuánto pagarás cada mes y cuánto
-        dinero habrás desembolsado al final del préstamo. En este artículo
-        desglosamos todos los escenarios.
+        Cuando estaba buscando hipoteca lo primero que hice fue meterme en Google y
+        buscar exactamente esto: cuanto se paga al mes por una hipoteca de 200.000
+        euros. Y la mayoría de resultados eran una mezcla de artículos genéricos y
+        simuladores de bancos que te pedían el teléfono antes de darte ningún número.
+        Así que voy a intentar responder de verdad.
       </p>
 
-      <h2>¿Cuánto se paga al mes por una hipoteca de 200.000 euros?</h2>
+      <h2>¿Cuánto se paga al mes? Las cifras reales</h2>
       <p>
-        La cuota mensual depende de tres factores: el importe (200.000 €), el tipo
-        de interés y el plazo. Con los tipos actuales del mercado, estas son las
-        cuotas aproximadas:
+        La cuota depende de tres cosas: cuánto pides (200.000 €), a qué interés y en
+        cuántos años. Con los tipos actuales del mercado, más o menos esto es lo que
+        te encontrarás:
       </p>
 
       <div className="my-6 overflow-x-auto rounded-xl border border-gray-200">
@@ -33,10 +34,10 @@ export default function Page() {
           <thead className="bg-gray-50 text-left text-gray-600">
             <tr>
               <th className="px-4 py-3">Plazo</th>
-              <th className="px-4 py-3">Interés 3%</th>
-              <th className="px-4 py-3">Interés 3,5%</th>
-              <th className="px-4 py-3">Interés 4%</th>
-              <th className="px-4 py-3">Interés 4,5%</th>
+              <th className="px-4 py-3">Al 3%</th>
+              <th className="px-4 py-3">Al 3,5%</th>
+              <th className="px-4 py-3">Al 4%</th>
+              <th className="px-4 py-3">Al 4,5%</th>
             </tr>
           </thead>
           <tbody>
@@ -58,110 +59,93 @@ export default function Page() {
       </div>
 
       <p>
-        <strong>Ejemplo concreto:</strong> con 200.000 euros a 25 años y un interés
-        fijo del 3,5%, la cuota mensual sería de aproximadamente <strong>1.001 €</strong>.
-        Al final del préstamo habrás pagado unos 300.300 €, es decir, más de
-        100.000 € en intereses.
-      </p>
-
-      <p>
-        Puedes calcular tu cuota exacta con nuestra{" "}
+        Puedes calcular exactamente tu caso con la{" "}
         <Link href="/calculadora-hipoteca" className="text-brand-600 underline">
           calculadora de hipoteca
         </Link>
-        , que también genera la tabla de amortización completa mes a mes.
+        , que además genera la tabla de amortización mes a mes.
       </p>
 
-      <h2>Hipoteca fija vs variable: cuál elegir en 2026</h2>
+      <h2>Lo que nadie te cuenta: el banco no es tu única opción</h2>
       <p>
-        Tras varios años de euríbor alto, muchos bancos ofrecen hipotecas fijas
-        competitivas. La hipoteca fija te da <strong>certeza total</strong>: sabes
-        lo que pagarás durante toda la vida del préstamo, independientemente de lo
-        que haga el euríbor.
+        Yo cometí el error clásico: fui directamente a mi banco de toda la vida,
+        me dieron una oferta y casi la firmo sin mirar más. Por suerte alguien me
+        recomendó usar un broker hipotecario antes de decidir.
       </p>
       <p>
-        La hipoteca variable puede resultar más barata si el euríbor baja, pero
-        asumes el riesgo de que suba. Para una hipoteca de 200.000 euros a 25 años,
-        una subida de 1 punto en el euríbor puede elevar la cuota mensual en más de
-        80-100 euros.
+        Usé <strong>iAhorro</strong> y la diferencia fue bastante notable. En mi caso
+        conseguieron un tipo bastante mejor del que me ofrecía mi banco, y encima sin
+        tener que ir yo a negociar con nadie. El broker trabaja con varios bancos a la
+        vez y negocia en tu nombre, tienen más palanca que tú yendo solo a ventanilla.
       </p>
-
-      <h2>Requisitos del banco para concederte 200.000 euros</h2>
       <p>
-        Los bancos aplican criterios de solvencia antes de aprobar cualquier
-        hipoteca. Para 200.000 euros, en general necesitas:
-      </p>
-      <ul>
-        <li>
-          <strong>Ingresos suficientes:</strong> la cuota no debe superar el 30-35%
-          de tus ingresos netos mensuales. Con una cuota de 1.000 €, necesitas ganar
-          al menos 2.857 € netos.
-        </li>
-        <li>
-          <strong>Ahorros del 20-30%:</strong> los bancos financian como máximo el
-          80% del valor de tasación, así que para 200.000 euros necesitas tener
-          ahorrados entre 40.000 y 60.000 euros (incluyendo gastos de compraventa).
-        </li>
-        <li>
-          <strong>Estabilidad laboral:</strong> contrato indefinido o ser autónomo
-          con al menos 2 años de actividad.
-        </li>
-        <li>
-          <strong>Sin deudas importantes:</strong> el conjunto de tus cuotas
-          (hipoteca + otros préstamos) no debe superar el 35% de tus ingresos.
-        </li>
-      </ul>
-
-      <h2>Gastos adicionales a tener en cuenta</h2>
-      <p>
-        El precio de la vivienda no es el único gasto. Al comprar con hipoteca
-        debes añadir:
-      </p>
-      <ul>
-        <li>
-          <strong>ITP o IVA:</strong> entre el 6% y el 10% del precio según la
-          comunidad autónoma (ITP para vivienda usada, 10% IVA para nueva).
-        </li>
-        <li>
-          <strong>Notaría y registro:</strong> aproximadamente 1.000-2.000 €.
-        </li>
-        <li>
-          <strong>Tasación:</strong> entre 250 y 600 €.
-        </li>
-        <li>
-          <strong>Gestoría:</strong> opcional, 300-600 €.
-        </li>
-      </ul>
-      <p>
-        En total, calcula entre un 10% y un 15% adicional sobre el precio del
-        inmueble en gastos asociados a la compra.
+        No lo digo como publicidad, lo digo porque me ahorré una cantidad relevante
+        en intereses a lo largo del préstamo. En una hipoteca de 200.000 euros, medio
+        punto de diferencia en el interés son más de 10.000 euros menos pagados al
+        final. Vale la pena dedicar una tarde a comparar.
       </p>
 
-      <h2>Cómo conseguir las mejores condiciones</h2>
-      <ul>
-        <li>Pide ofertas a <strong>al menos tres bancos distintos</strong> antes de decidir.</li>
-        <li>Compara siempre la <strong>TAE</strong>, no solo el TIN, ya que incluye las comisiones.</li>
-        <li>
-          Negocia los productos vinculados (seguros, tarjetas): a veces un tipo
-          más bajo sale caro si los seguros son caros.
-        </li>
-        <li>
-          Considera un <strong>bróker hipotecario</strong> si no tienes tiempo:
-          cobran comisión pero suelen conseguir mejores tipos que en ventanilla.
-        </li>
-      </ul>
+      <h2>Fija, variable o mixta: qué elegir ahora mismo</h2>
+      <p>
+        Después de años de euríbor disparado, el mercado de hipotecas fijas ha
+        mejorado bastante. Mi opinión personal, y esto es solo mi opinión, es que
+        para la mayoría de gente la hipoteca fija da más tranquilidad y a día de hoy
+        los tipos no están tan mal como para que no merezca la pena pagar esa
+        "prima" por la certeza.
+      </p>
+      <p>
+        Con la variable asumes que si el euríbor sube, tú pagas más. Y puede subir
+        bastante. Para una hipoteca de 200.000 euros a 25 años, una subida de 1 punto
+        en el euríbor te puede costar 100 euros más al mes. Mes tras mes. Eso se nota.
+      </p>
+      <p>
+        Puedes simular exactamente cuánto cambia tu cuota con distintos tipos en la{" "}
+        <Link href="/calculadora-hipoteca" className="text-brand-600 underline">
+          calculadora
+        </Link>
+        .
+      </p>
+
+      <h2>Cuánto necesitas tener ahorrado</h2>
+      <p>
+        Los bancos financian como mucho el 80% del valor de tasación. Para una
+        hipoteca de 200.000 euros eso significa que el piso vale al menos 250.000,
+        así que necesitas tener ahorrados mínimo 50.000 euros solo de entrada.
+      </p>
+      <p>
+        A eso le sumas los gastos de compraventa: el ITP (entre el 6% y el 10% según
+        la comunidad), notaría, registro y gestoría. En Madrid, por ejemplo, el ITP
+        está al 6%, así que en un piso de 250.000 euros son otros 15.000 euros más.
+        En total, calcula que necesitas tener entre el 25% y el 30% del valor del
+        piso ahorrado antes de empezar.
+      </p>
+
+      <h2>Cuánto tienes que ganar para que te den la hipoteca</h2>
+      <p>
+        La regla que aplican casi todos los bancos es que la cuota mensual no supere
+        el 30-35% de tus ingresos netos. Con una cuota de 1.000 euros al mes,
+        necesitas demostrar que ingresas al menos 2.800-3.000 euros netos.
+      </p>
+      <p>
+        Si no llegas solo, se puede pedir con pareja o con un avalista, aunque eso
+        tiene sus propias implicaciones. Puedes calcular tu salario neto con nuestra{" "}
+        <Link href="/calculadora-nomina" className="text-brand-600 underline">
+          calculadora de nómina
+        </Link>{" "}
+        para ver exactamente con cuánto cuentas.
+      </p>
 
       <div className="my-6 rounded-xl bg-brand-50 p-5 border border-brand-100">
-        <p className="font-semibold text-brand-700">¿Listo para calcular tu hipoteca?</p>
+        <p className="font-semibold text-brand-700">Calcula tu cuota ahora</p>
         <p className="mt-1 text-sm text-gray-700">
-          Usa nuestra calculadora gratuita para ver la cuota exacta, los intereses
-          totales y la amortización completa mes a mes.
+          Cambia los valores para ver cómo afecta el plazo y el tipo de interés
+          a lo que pagarás cada mes.
         </p>
         <Link
           href="/calculadora-hipoteca"
           className="mt-3 inline-block rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700"
         >
-          Calcular mi hipoteca →
+          Abrir calculadora →
         </Link>
       </div>
 
@@ -188,15 +172,15 @@ function FaqJsonLd() {
         name: "¿Cuánto dinero necesito ahorrado para una hipoteca de 200.000 euros?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Los bancos financian como máximo el 80% del valor de tasación. Para 200.000 euros necesitas tener ahorrados entre 40.000 y 60.000 euros, incluyendo impuestos y gastos de escritura.",
+          text: "Los bancos financian como máximo el 80%. Para 200.000 euros necesitas entre 40.000 y 60.000 euros ahorrados, incluyendo impuestos y gastos de escritura.",
         },
       },
       {
         "@type": "Question",
-        name: "¿Cuánto gana que ganar para que me concedan una hipoteca de 200.000 euros?",
+        name: "¿Vale la pena usar un broker hipotecario?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "La cuota no debe superar el 30-35% de tus ingresos netos. Con una cuota de 1.000 euros, necesitas ingresar al menos 2.857 euros netos al mes.",
+          text: "En muchos casos sí. Un broker negocia con varios bancos a la vez y puede conseguir mejores condiciones que yendo directamente a tu banco. En hipotecas grandes, medio punto de diferencia en el interés puede suponer más de 10.000 euros de ahorro.",
         },
       },
     ],
