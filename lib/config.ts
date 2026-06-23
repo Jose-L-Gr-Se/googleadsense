@@ -3,7 +3,7 @@
 
 export const siteConfig = {
   name: "Calculadoras Gratis",
-  url: "https://calculadorasgratis.es", // <-- cambia por tu dominio real
+  url: "https://calculadorasclaras.es",
   description:
     "Calculadoras financieras gratuitas: hipoteca, préstamos, IVA, IRPF, interés compuesto y finiquito. Resultados al instante y sin registro.",
   locale: "es_ES",
