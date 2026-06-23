@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { calculators, siteConfig } from "@/lib/config";
+import { articles } from "@/lib/articles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -18,6 +19,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
+    });
+  }
+
+  entries.push({
+    url: `${siteConfig.url}/blog`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.7,
+  });
+
+  for (const a of articles) {
+    entries.push({
+      url: `${siteConfig.url}/blog/${a.slug}`,
+      lastModified: new Date(a.date),
+      changeFrequency: "monthly",
+      priority: 0.7,
     });
   }
 

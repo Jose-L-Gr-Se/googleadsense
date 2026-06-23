@@ -25,6 +25,15 @@ export default function Footer() {
           </ul>
         </div>
         <div>
+          <p className="mb-2 text-sm font-semibold text-gray-700">Blog</p>
+          <ul className="space-y-1 text-sm text-gray-500">
+            <li><Link href="/blog/hipoteca-200000-euros-cuota-mensual" className="hover:text-brand-600">Hipoteca 200.000 €</Link></li>
+            <li><Link href="/blog/diferencia-tin-tae" className="hover:text-brand-600">Diferencia TIN y TAE</Link></li>
+            <li><Link href="/blog/calcular-finiquito-baja-voluntaria" className="hover:text-brand-600">Finiquito baja voluntaria</Link></li>
+            <li><Link href="/blog/interes-compuesto-ejemplos" className="hover:text-brand-600">Interés compuesto</Link></li>
+          </ul>
+        </div>
+        <div>
           <p className="mb-2 text-sm font-semibold text-gray-700">Legal</p>
           <ul className="space-y-1 text-sm text-gray-500">
             <li><Link href="/privacidad" className="hover:text-brand-600">Política de privacidad</Link></li>

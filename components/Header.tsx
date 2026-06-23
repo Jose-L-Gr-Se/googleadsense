@@ -21,6 +21,9 @@ export default function Header() {
               {c.shortTitle}
             </Link>
           ))}
+          <Link href="/blog" className="hover:text-brand-600">
+            Blog
+          </Link>
         </nav>
       </div>
     </header>
