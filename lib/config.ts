@@ -12,7 +12,7 @@ export const siteConfig = {
   // 2) Copia el Measurement ID (formato G-XXXXXXXXXX)
   // 3) Añádelo como variable de entorno GA_MEASUREMENT_ID en Vercel
   //    (Settings → Environment Variables) o pégalo aquí directamente.
-  ga4MeasurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "",
+  ga4MeasurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-QXTERWPX6G",
   locale: "es_ES",
 
   // Google AdSense.
