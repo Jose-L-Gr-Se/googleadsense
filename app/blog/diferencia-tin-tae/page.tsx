@@ -15,37 +15,52 @@ export default function Page() {
   return (
     <ArticleShell meta={meta}>
       <p>
-        Cuando pides un préstamo o comparas hipotecas, el banco siempre muestra dos
-        cifras: el TIN y la TAE. La mayoría de la gente mira solo la más baja
-        (normalmente el TIN) y se lleva sorpresas. Aquí te explicamos la diferencia
-        de forma clara para que siempre elijas bien.
+        Cuando estaba buscando hipoteca para mi primera vivienda, lo primero que me
+        pasó es que todos los bancos me daban números distintos y no había manera de
+        compararlos bien. Uno te ponía el TIN en grande, otro la TAE, otro te
+        hablaba de diferencial más euríbor… una confusión bastante bien montada, la
+        verdad.
+      </p>
+      <p>
+        Después de mirar muchas ofertas entendí cuál era la clave: el TIN es el
+        precio del dinero, pero la TAE es lo que pagas realmente. Si solo miras el
+        TIN te pueden estar colando comisiones importantes por debajo.
       </p>
 
-      <h2>¿Qué es el TIN?</h2>
+      <h2>Qué es el TIN</h2>
       <p>
         El <strong>TIN (Tipo de Interés Nominal)</strong> es el porcentaje de
-        interés puro que el banco aplica al capital prestado. Es el coste básico del
-        dinero que te prestan, sin incluir ningún gasto adicional.
+        interés puro que el banco cobra sobre el capital. Sin más. No incluye
+        comisiones, seguros vinculados ni ningún otro gasto.
       </p>
       <p>
-        Si pides 10.000 euros con un TIN del 6% anual, el banco te cobra 600 euros
-        al año solo en concepto de intereses (antes de comisiones y otros gastos).
+        Es el número que los bancos ponen en grande en los anuncios porque siempre
+        es el más bajo. Y es útil para calcular la cuota mensual, que es lo que
+        hace nuestra{" "}
+        <Link href="/calculadora-hipoteca" className="text-brand-600 underline">
+          calculadora de hipoteca
+        </Link>
+        . Pero para comparar ofertas entre sí, solo con el TIN te quedas a medias.
       </p>
 
-      <h2>¿Qué es la TAE?</h2>
+      <h2>Qué es la TAE y por qué es lo que importa</h2>
       <p>
-        La <strong>TAE (Tasa Anual Equivalente)</strong> incluye el TIN
-        <strong> más todos los gastos y comisiones</strong> asociados al producto:
-        comisión de apertura, gastos de estudio, seguros vinculados obligatorios, etc.
-        Se expresa también como porcentaje anual y permite comparar productos en
-        igualdad de condiciones.
+        La <strong>TAE (Tasa Anual Equivalente)</strong> incluye el TIN más todos
+        los gastos asociados al producto: comisiones de apertura, seguros
+        obligatorios vinculados, gastos de estudio. Todo lo que te va a costar ese
+        préstamo en realidad.
       </p>
       <p>
-        La TAE siempre es igual o mayor que el TIN. Si son iguales, significa que el
-        producto no tiene comisiones adicionales.
+        Cuando yo estaba comparando bancos para la hipoteca, hubo un caso concreto
+        que me abrió los ojos. Un banco me ofrecía un TIN del 2,9% y otro del 3,1%.
+        El primero parecía mejor, claro. Pero cuando miré la TAE, el primero tenía
+        una comisión de apertura del 1,5% y un seguro de vida vinculado bastante
+        caro. La TAE resultaba ser más alta que la del segundo banco. O sea, el de
+        TIN más bajo era el más caro en la práctica.
       </p>
-
-      <h2>Diferencia entre TIN y TAE: resumen visual</h2>
+      <p>
+        Desde ese momento solo miraba la TAE para hacer la primera criba de ofertas.
+      </p>
 
       <div className="my-6 overflow-x-auto rounded-xl border border-gray-200">
         <table className="w-full text-sm">
@@ -58,92 +73,69 @@ export default function Page() {
           </thead>
           <tbody>
             {[
-              ["¿Qué incluye?", "Solo el interés", "Interés + comisiones + gastos"],
+              ["¿Qué incluye?", "Solo el interés puro", "Interés + comisiones + seguros vinculados"],
               ["¿Para qué sirve?", "Calcular la cuota mensual", "Comparar productos distintos"],
-              ["¿Es siempre igual?", "Puede variar (si es variable)", "Siempre actualizada"],
-              ["¿El banco lo puede ocultar?", "No, es obligatorio", "No, es obligatorio por ley"],
+              ["¿Cuál es mayor?", "Siempre igual o menor", "Siempre igual o mayor que el TIN"],
+              ["¿Es obligatorio informarlo?", "Sí, por ley", "Sí, por ley"],
             ].map(([concepto, tin, tae]) => (
               <tr key={concepto as string} className="border-t border-gray-100">
                 <td className="px-4 py-2 font-medium text-gray-700">{concepto}</td>
                 <td className="px-4 py-2">{tin}</td>
-                <td className="px-4 py-2">{tae}</td>
+                <td className="px-4 py-2 font-semibold text-brand-700">{tae}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
 
-      <h2>Ejemplo práctico: el truco del TIN bajo y la TAE alta</h2>
+      <h2>Un ejemplo concreto para que quede claro</h2>
       <p>
-        Imagina que comparas dos préstamos personales de 10.000 euros a 3 años:
+        Imagina que comparas dos préstamos personales de 15.000 euros a 4 años:
       </p>
       <ul>
-        <li><strong>Banco A:</strong> TIN 5% — TAE 7,2% — Comisión de apertura: 2%</li>
-        <li><strong>Banco B:</strong> TIN 6% — TAE 6,1% — Sin comisiones</li>
+        <li><strong>Banco A:</strong> TIN 5,5% — TAE 8,1% — Comisión apertura 2% + seguro obligatorio</li>
+        <li><strong>Banco B:</strong> TIN 6,2% — TAE 6,4% — Sin comisiones</li>
       </ul>
       <p>
-        El Banco A tiene un TIN más bajo, pero la TAE es mayor porque cobra una
-        comisión de apertura del 2% (200 euros). En total, el Banco A es más caro
-        aunque el interés nominal sea inferior.
-      </p>
-      <p>
-        <strong>Regla de oro: compara siempre por la TAE.</strong> El TIN solo te
-        sirve para saber cuánto pagarás cada mes.
+        El Banco A tiene TIN más bajo, pero su TAE es casi 2 puntos mayor. En un
+        préstamo de 15.000 euros eso son cientos de euros de diferencia. Si solo
+        hubieras mirado el TIN, habrías elegido el más caro.
       </p>
 
-      <h2>¿Cuándo el TIN sí importa?</h2>
+      <h2>Cuándo el TIN y la TAE son iguales</h2>
       <p>
-        El TIN es útil cuando quieres calcular la cuota mensual exacta de un
-        préstamo. La fórmula de amortización francesa usa el TIN mensual (TIN
-        anual ÷ 12) para calcular cuánto de cada cuota son intereses y cuánto es
-        capital.
-      </p>
-      <p>
-        Puedes usar nuestra{" "}
-        <Link href="/calculadora-prestamo" className="text-brand-600 underline">
-          calculadora de préstamo personal
-        </Link>{" "}
-        introduciendo el TIN para obtener la cuota mensual exacta, o la{" "}
-        <Link href="/calculadora-hipoteca" className="text-brand-600 underline">
-          calculadora de hipoteca
-        </Link>{" "}
-        para ver también la tabla de amortización completa.
+        Si un banco ofrece un producto sin ninguna comisión ni gasto adicional, el
+        TIN y la TAE coinciden. Esto pasa sobre todo en algunos depósitos o en
+        préstamos muy sencillos. En hipotecas es bastante raro porque casi siempre
+        hay algo vinculado.
       </p>
 
-      <h2>TIN y TAE en hipotecas variables</h2>
+      <h2>TAE en hipotecas variables: el truco de la letra pequeña</h2>
       <p>
-        En las hipotecas variables (referenciadas al euríbor), el TIN cambia cada 6
-        o 12 meses según la revisión. La TAE también se actualiza. Por eso en los
-        folletos de las hipotecas variables verás la TAE calculada para un escenario
-        concreto de euríbor, que puede no coincidir con la realidad futura.
+        En hipotecas variables, la TAE se calcula asumiendo que el euríbor se
+        mantiene estable durante toda la vida del préstamo. Eso es una ficción
+        contable, no una predicción. Dos hipotecas variables con la misma TAE
+        calculada hoy pueden tener costes muy diferentes dependiendo de cómo
+        evolucione el euríbor.
       </p>
-      <ul>
-        <li>Lee siempre la FEIN (Ficha Europea de Información Normalizada) antes de firmar.</li>
-        <li>
-          Compara hipotecas variables con el mismo escenario de euríbor para que
-          la comparación sea justa.
-        </li>
-        <li>Recuerda que en hipotecas fijas, el TIN y la TAE sí son definitivos.</li>
-      </ul>
+      <p>
+        Por eso en variables lo que realmente hay que comparar es el diferencial
+        (el margen que cobra el banco por encima del euríbor) y las comisiones.
+        La TAE sigue siendo útil como primer filtro, pero no es suficiente.
+      </p>
 
       <div className="my-6 rounded-xl bg-brand-50 p-5 border border-brand-100">
-        <p className="font-semibold text-brand-700">Calcula tu préstamo con el TIN</p>
+        <p className="font-semibold text-brand-700">Calcula tu cuota con el TIN que te ofrecen</p>
         <p className="mt-1 text-sm text-gray-700">
-          Introduce el TIN que te ofrece el banco para ver la cuota mensual exacta
-          y el coste total del préstamo.
+          Introduce el TIN, el importe y el plazo para ver la cuota mensual exacta
+          y el total que pagarás.
         </p>
         <div className="mt-3 flex flex-wrap gap-2">
-          <Link
-            href="/calculadora-prestamo"
-            className="inline-block rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700"
-          >
-            Calcular préstamo →
-          </Link>
-          <Link
-            href="/calculadora-hipoteca"
-            className="inline-block rounded-lg border border-brand-600 px-4 py-2 text-sm font-semibold text-brand-600 hover:bg-brand-50"
-          >
+          <Link href="/calculadora-hipoteca" className="inline-block rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700">
             Calcular hipoteca →
+          </Link>
+          <Link href="/calculadora-prestamo" className="inline-block rounded-lg border border-brand-600 px-4 py-2 text-sm font-semibold text-brand-600 hover:bg-brand-50">
+            Calcular préstamo →
           </Link>
         </div>
       </div>
@@ -171,7 +163,7 @@ function FaqJsonLd() {
         name: "¿Qué es mejor, un TIN bajo o una TAE baja?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Siempre es mejor una TAE baja. Un TIN bajo con comisiones altas puede resultar más caro que un TIN algo mayor sin comisiones. La TAE refleja el coste real total.",
+          text: "Siempre es mejor una TAE baja. Un TIN bajo con comisiones altas puede resultar más caro que un TIN algo mayor sin comisiones. La TAE refleja el coste real total del producto.",
         },
       },
     ],
