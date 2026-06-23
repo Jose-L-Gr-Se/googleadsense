@@ -50,4 +50,31 @@ export const articles: ArticleMeta[] = [
     keyword: "interes compuesto ejemplos",
     readTime: 6,
   },
+  {
+    slug: "cuanto-irpf-pago-por-mi-sueldo",
+    title: "¿Cuánto IRPF pago por mi sueldo? Guía por tramos 2026",
+    description:
+      "Descubre cuánto IRPF pagas según tu salario bruto en 2026, con ejemplos reales para sueldos de 20.000, 30.000, 40.000 y 60.000 euros.",
+    date: "2026-06-23",
+    keyword: "cuanto irpf pago sueldo 2026",
+    readTime: 6,
+  },
+  {
+    slug: "euribor-hipoteca-variable-como-afecta",
+    title: "Euríbor e hipoteca variable: cómo afecta a tu cuota mensual",
+    description:
+      "Explicación clara de qué es el euríbor, cómo se calcula la revisión de tu hipoteca variable y qué puedes hacer si sube mucho.",
+    date: "2026-06-23",
+    keyword: "euribor hipoteca variable cuota",
+    readTime: 6,
+  },
+  {
+    slug: "cuanto-ahorrar-al-mes",
+    title: "¿Cuánto dinero deberías ahorrar al mes? La regla del 50/30/20",
+    description:
+      "Aprende a distribuir tu sueldo con la regla 50/30/20 y descubre cuánto deberías ahorrar cada mes según tus ingresos para alcanzar la libertad financiera.",
+    date: "2026-06-23",
+    keyword: "cuanto ahorrar al mes",
+    readTime: 5,
+  },
 ];

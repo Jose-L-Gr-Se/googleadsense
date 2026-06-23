@@ -2,10 +2,17 @@
 // Cambia estos valores cuando tengas tu dominio y tu cuenta de AdSense aprobada.
 
 export const siteConfig = {
-  name: "Calculadoras Gratis",
+  name: "Calculadoras Claras",
   url: "https://calculadorasclaras.es",
   description:
     "Calculadoras financieras gratuitas: hipoteca, préstamos, IVA, IRPF, interés compuesto y finiquito. Resultados al instante y sin registro.",
+
+  // Google Analytics 4.
+  // 1) Crea una propiedad en https://analytics.google.com
+  // 2) Copia el Measurement ID (formato G-XXXXXXXXXX)
+  // 3) Añádelo como variable de entorno GA_MEASUREMENT_ID en Vercel
+  //    (Settings → Environment Variables) o pégalo aquí directamente.
+  ga4MeasurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "",
   locale: "es_ES",
 
   // Google AdSense.
@@ -74,5 +81,13 @@ export const calculators: CalculatorMeta[] = [
     description:
       "Estima tu finiquito: salario pendiente, vacaciones no disfrutadas y pagas extra prorrateadas.",
     keyword: "calculadora finiquito",
+  },
+  {
+    slug: "irpf",
+    title: "Calculadora de IRPF 2026",
+    shortTitle: "IRPF",
+    description:
+      "Calcula la retención de IRPF sobre tu salario bruto según los tramos del impuesto vigentes en 2026.",
+    keyword: "calculadora irpf 2026",
   },
 ];
