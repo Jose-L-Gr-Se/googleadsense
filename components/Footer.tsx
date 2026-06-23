@@ -37,6 +37,7 @@ export default function Footer() {
           <p className="mb-2 text-sm font-semibold text-gray-700">Legal</p>
           <ul className="space-y-1 text-sm text-gray-500">
             <li><Link href="/privacidad" className="hover:text-brand-600">Política de privacidad</Link></li>
+            <li><Link href="/cookies" className="hover:text-brand-600">Política de cookies</Link></li>
             <li><Link href="/aviso-legal" className="hover:text-brand-600">Aviso legal</Link></li>
             <li><Link href="/sobre-nosotros" className="hover:text-brand-600">Sobre nosotros</Link></li>
           </ul>
