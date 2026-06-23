@@ -1,0 +1,3 @@
+# Sustituye pub-0000000000000000 por tu Publisher ID real de AdSense
+# (sin el prefijo "ca-"). Google exige este archivo para validar tu inventario.
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
