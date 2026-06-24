@@ -20,10 +20,11 @@ const TRAMOS_IRPF = [
   { hasta: Infinity, tipo: 0.47 },
 ];
 
-// Reducción por rendimientos del trabajo (escala estatal 2026)
+// Reducción por rendimientos del trabajo (Art. 20 LIRPF, reforma 2023 — vigente 2024-2026)
+// Fuente: AEAT Campaña Renta 2024
 function reduccionRendimientos(rentoNeto: number): number {
-  if (rentoNeto <= 13115) return 5565;
-  if (rentoNeto <= 16825) return Math.max(0, 5565 - 1.5 * (rentoNeto - 13115));
+  if (rentoNeto <= 14047.5) return 6498;
+  if (rentoNeto <= 19747.5) return Math.max(0, 6498 - 1.14 * (rentoNeto - 14047.5));
   return 0;
 }
 

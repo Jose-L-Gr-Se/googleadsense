@@ -4,8 +4,9 @@ import { useMemo, useState } from "react";
 import Field from "@/components/ui/Field";
 import { formatEUR } from "@/lib/format";
 
-// Tramos IRPF estatal 2026 (escala general aplicable a rendimientos del trabajo).
-// La retención real depende también del tramo autonómico y la situación personal.
+// Tipos combinados IRPF 2026 (escala estatal + autonómica media, referencia Comunidad de Madrid).
+// Otras comunidades autónomas pueden tener tipos ligeramente distintos.
+// La retención real también depende de la situación personal y deducciones.
 const TRAMOS = [
   { hasta: 12450, tipo: 0.19 },
   { hasta: 20200, tipo: 0.24 },
@@ -99,8 +100,9 @@ export default function Irpf() {
       </div>
 
       <p className="mt-3 text-xs text-ink-500">
-        Cálculo orientativo basado en la escala estatal 2026. No incluye deducciones personales,
-        autonómicas ni cotizaciones a la Seguridad Social.
+        Tipos combinados (estatal + autonómica) orientativos para 2026. Los tipos autonómicos varían por comunidad.
+        No incluye deducciones personales ni cotizaciones a la Seguridad Social —
+        para el neto real usa la <strong>calculadora de nómina</strong>.
       </p>
     </div>
   );

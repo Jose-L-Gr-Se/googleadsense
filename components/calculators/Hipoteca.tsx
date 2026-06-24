@@ -26,9 +26,9 @@ export default function Hipoteca() {
   return (
     <div className="surface-card p-5">
       <div className="grid gap-4 sm:grid-cols-3">
-        <Field label="Importe" value={amount} onChange={setAmount} suffix="€" step={1000} />
-        <Field label="Interés anual" value={rate} onChange={setRate} suffix="%" step={0.1} />
-        <Field label="Plazo" value={years} onChange={setYears} suffix="años" step={1} />
+        <Field label="Importe" value={amount} onChange={setAmount} suffix="€" step={1000} min={1000} />
+        <Field label="Interés anual (TIN)" value={rate} onChange={setRate} suffix="%" step={0.05} min={0.01} />
+        <Field label="Plazo" value={years} onChange={setYears} suffix="años" step={1} min={1} />
       </div>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-3">

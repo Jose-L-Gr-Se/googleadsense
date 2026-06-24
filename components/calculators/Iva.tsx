@@ -3,7 +3,12 @@
 import { useState } from "react";
 import { formatEUR } from "@/lib/format";
 
-const RATES = [21, 10, 4];
+const RATES = [
+  { value: 21, label: "21% — General (la mayoría de bienes y servicios)" },
+  { value: 10, label: "10% — Reducido (alimentación general, hostelería, transporte)" },
+  { value: 4,  label: "4% — Superreducido (pan, leche, huevos, libros, medicamentos)" },
+  { value: 0,  label: "0% — Exento (aceite, pasta, harinas básicas desde 2023)" },
+];
 
 export default function Iva() {
   const [amount, setAmount] = useState(100);
@@ -66,7 +71,7 @@ export default function Iva() {
             onChange={(e) => setRate(parseFloat(e.target.value))}
           >
             {RATES.map((r) => (
-              <option key={r} value={r}>{r}%</option>
+              <option key={r.value} value={r.value}>{r.label}</option>
             ))}
           </select>
         </label>
