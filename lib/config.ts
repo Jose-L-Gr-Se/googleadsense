@@ -20,8 +20,8 @@ export const siteConfig = {
   // 2) Sustituye ca-pub-0000000000000000 por tu Publisher ID real.
   // 3) Crea bloques de anuncios y pega aquí los "slot" numéricos.
   adsense: {
-    enabled: false, // ponlo en true cuando AdSense apruebe el sitio
-    client: "ca-pub-0000000000000000",
+    enabled: false, // cambiar a true cuando AdSense apruebe el sitio
+    client: "ca-pub-8811534734388605",
     slots: {
       inArticle: "0000000000",
       sidebar: "1111111111",
