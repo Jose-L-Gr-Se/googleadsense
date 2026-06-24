@@ -40,14 +40,7 @@ export default function AdUnit({
   }, [enabled]);
 
   if (!enabled) {
-    return (
-      <div
-        className={`flex min-h-[120px] items-center justify-center rounded-lg border border-dashed border-gray-300 bg-gray-50 text-xs uppercase tracking-wide text-gray-400 ${className}`}
-        aria-hidden="true"
-      >
-        {label}
-      </div>
-    );
+    return null;
   }
 
   return (
