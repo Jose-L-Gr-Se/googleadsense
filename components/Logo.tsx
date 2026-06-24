@@ -1,61 +1,72 @@
-import { siteConfig } from "@/lib/config";
+"use client";
+
+import { useId } from "react";
 
 type LogoProps = {
-  /** Tamaño del icono en px. El texto escala en consecuencia. */
   size?: number;
-  /** Si false, muestra solo el icono sin el nombre. */
   withText?: boolean;
   className?: string;
 };
 
-/**
- * Logo de Calculadoras Claras.
- * Marca: cuadrado redondeado con gradiente + símbolo € sobre barras
- * (alusión a cálculo / finanzas). Todo en SVG, sin dependencias.
- */
 export default function Logo({ size = 36, withText = true, className = "" }: LogoProps) {
+  // useId garantiza IDs únicos cuando hay múltiples instancias del SVG en la página
+  const uid = useId().replace(/:/g, "");
+  const gradId = `lg-${uid}`;
+
   return (
-    <span className={`flex items-center gap-2.5 ${className}`}>
+    <span className={`flex items-center gap-3 ${className}`}>
+      {/* Icono: monograma geométrico CC con línea de tendencia */}
       <svg
         width={size}
         height={size}
-        viewBox="0 0 48 48"
+        viewBox="0 0 40 40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
         className="shrink-0"
       >
         <defs>
-          <linearGradient id="logo-grad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#3b66f5" />
-            <stop offset="1" stopColor="#1d37d7" />
+          <linearGradient id={gradId} x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#4f78f7" />
+            <stop offset="100%" stopColor="#1d37d7" />
           </linearGradient>
         </defs>
-        <rect width="48" height="48" rx="12" fill="url(#logo-grad)" />
-        {/* Barras tipo gráfico/cálculo */}
-        <rect x="11" y="27" width="5" height="10" rx="1.5" fill="#ffffff" opacity="0.5" />
-        <rect x="19" y="22" width="5" height="15" rx="1.5" fill="#ffffff" opacity="0.7" />
-        {/* Símbolo euro estilizado */}
+
+        {/* Fondo cuadrado redondeado */}
+        <rect width="40" height="40" rx="10" fill={`url(#${gradId})`} />
+
+        {/* CC monograma — dos arcos paralelos en blanco puro, gruesos y limpios */}
+        {/* Arco izquierdo de la C exterior */}
         <path
-          d="M34.5 18.8c-1.1-1.5-2.9-2.5-5-2.5-3.6 0-6.5 3.4-6.5 7.7s2.9 7.7 6.5 7.7c2.1 0 3.9-1 5-2.5"
-          stroke="#ffffff"
-          strokeWidth="2.6"
+          d="M22 10 C13 10 10 14.5 10 20 C10 25.5 13 30 22 30"
+          stroke="white"
+          strokeWidth="3"
           strokeLinecap="round"
           fill="none"
         />
-        <path d="M21 22.2h9M21 26.2h8" stroke="#ffffff" strokeWidth="2.4" strokeLinecap="round" />
+        {/* Arco derecho de la C interior (más pequeño, desplazado) */}
+        <path
+          d="M25 15 C20 15 17.5 17 17.5 20 C17.5 23 20 25 25 25"
+          stroke="white"
+          strokeWidth="2.4"
+          strokeLinecap="round"
+          fill="none"
+          opacity="0.7"
+        />
+        {/* Punto / nodo que conecta las dos C — evoca dato / precisión */}
+        <circle cx="28" cy="20" r="2.2" fill="white" />
       </svg>
+
       {withText && (
-        <span className="flex flex-col leading-none">
-          <span className="text-[15px] font-bold tracking-tight text-ink-900">
+        <span className="flex flex-col -space-y-0.5 leading-none">
+          <span className="text-[15px] font-extrabold tracking-tight text-ink-900">
             Calculadoras
           </span>
-          <span className="text-[15px] font-bold tracking-tight text-brand-600">
+          <span className="text-[15px] font-extrabold tracking-tight text-brand-600">
             Claras
           </span>
         </span>
       )}
-      <span className="sr-only">{siteConfig.name}</span>
     </span>
   );
 }

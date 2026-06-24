@@ -18,7 +18,7 @@ export default function Prestamo() {
   const totalInterest = totalPaid - amount;
 
   return (
-    <div className="rounded-xl border border-gray-200 p-5">
+    <div className="surface-card p-5">
       <div className="grid gap-4 sm:grid-cols-3">
         <Field label="Importe" value={amount} onChange={setAmount} suffix="€" step={500} />
         <Field label="Interés (TIN) anual" value={rate} onChange={setRate} suffix="%" step={0.1} />
@@ -27,15 +27,15 @@ export default function Prestamo() {
 
       <div className="mt-5 grid gap-3 sm:grid-cols-3">
         <div className="result-card">
-          <p className="text-sm text-gray-600">Cuota mensual</p>
+          <p className="text-sm text-ink-600">Cuota mensual</p>
           <p className="text-2xl font-bold text-brand-700">{formatEUR(payment)}</p>
         </div>
         <div className="result-card">
-          <p className="text-sm text-gray-600">Intereses totales</p>
+          <p className="text-sm text-ink-600">Intereses totales</p>
           <p className="text-2xl font-bold text-brand-700">{formatEUR(totalInterest)}</p>
         </div>
         <div className="result-card">
-          <p className="text-sm text-gray-600">Total a devolver</p>
+          <p className="text-sm text-ink-600">Total a devolver</p>
           <p className="text-2xl font-bold text-brand-700">{formatEUR(totalPaid)}</p>
         </div>
       </div>

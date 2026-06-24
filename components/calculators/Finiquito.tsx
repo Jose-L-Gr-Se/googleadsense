@@ -27,7 +27,7 @@ export default function Finiquito() {
   }, [monthlySalary, daysWorked, vacationDays, extraMonths]);
 
   return (
-    <div className="rounded-xl border border-gray-200 p-5">
+    <div className="surface-card p-5">
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Field label="Salario bruto mensual" value={monthlySalary} onChange={setMonthlySalary} suffix="€" step={50} />
         <Field label="Días trabajados sin cobrar" value={daysWorked} onChange={setDaysWorked} suffix="días" step={1} />
@@ -37,23 +37,23 @@ export default function Finiquito() {
 
       <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <div className="result-card">
-          <p className="text-sm text-gray-600">Salario pendiente</p>
+          <p className="text-sm text-ink-600">Salario pendiente</p>
           <p className="text-lg font-bold text-brand-700">{formatEUR(result.pendingSalary)}</p>
         </div>
         <div className="result-card">
-          <p className="text-sm text-gray-600">Vacaciones</p>
+          <p className="text-sm text-ink-600">Vacaciones</p>
           <p className="text-lg font-bold text-brand-700">{formatEUR(result.vacationPay)}</p>
         </div>
         <div className="result-card">
-          <p className="text-sm text-gray-600">Pagas extra</p>
+          <p className="text-sm text-ink-600">Pagas extra</p>
           <p className="text-lg font-bold text-brand-700">{formatEUR(result.extraPay)}</p>
         </div>
         <div className="result-card border-brand-500 bg-brand-100">
-          <p className="text-sm text-gray-700">Total finiquito (bruto)</p>
+          <p className="text-sm text-ink-700">Total finiquito (bruto)</p>
           <p className="text-lg font-bold text-brand-700">{formatEUR(result.total)}</p>
         </div>
       </div>
-      <p className="mt-3 text-xs text-gray-500">
+      <p className="mt-3 text-xs text-ink-500">
         Cálculo orientativo en bruto. No incluye indemnización por despido ni
         retenciones de IRPF. Consulta tu convenio colectivo.
       </p>

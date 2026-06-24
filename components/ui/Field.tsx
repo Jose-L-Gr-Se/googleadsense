@@ -28,7 +28,7 @@ export default function Field({
           onChange={(e) => onChange(parseFloat(e.target.value))}
         />
         {suffix && (
-          <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-400">
+          <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm text-ink-400">
             {suffix}
           </span>
         )}

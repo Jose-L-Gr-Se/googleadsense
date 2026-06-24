@@ -23,7 +23,7 @@ export default function InteresCompuesto() {
   );
 
   return (
-    <div className="rounded-xl border border-gray-200 p-5">
+    <div className="surface-card p-5">
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Field label="Capital inicial" value={initial} onChange={setInitial} suffix="€" step={100} />
         <Field label="Aportación mensual" value={monthly} onChange={setMonthly} suffix="€" step={50} />
@@ -33,15 +33,15 @@ export default function InteresCompuesto() {
 
       <div className="mt-5 grid gap-3 sm:grid-cols-3">
         <div className="result-card">
-          <p className="text-sm text-gray-600">Valor final</p>
+          <p className="text-sm text-ink-600">Valor final</p>
           <p className="text-2xl font-bold text-brand-700">{formatEUR(result.finalValue)}</p>
         </div>
         <div className="result-card">
-          <p className="text-sm text-gray-600">Total aportado</p>
+          <p className="text-sm text-ink-600">Total aportado</p>
           <p className="text-2xl font-bold text-brand-700">{formatEUR(result.totalContributed)}</p>
         </div>
         <div className="result-card">
-          <p className="text-sm text-gray-600">Intereses ganados</p>
+          <p className="text-sm text-ink-600">Intereses ganados</p>
           <p className="text-2xl font-bold text-green-700">{formatEUR(result.totalInterest)}</p>
         </div>
       </div>

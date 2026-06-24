@@ -24,7 +24,7 @@ export default function Hipoteca() {
   const totalInterest = totalPaid - amount;
 
   return (
-    <div className="rounded-xl border border-gray-200 p-5">
+    <div className="surface-card p-5">
       <div className="grid gap-4 sm:grid-cols-3">
         <Field label="Importe" value={amount} onChange={setAmount} suffix="€" step={1000} />
         <Field label="Interés anual" value={rate} onChange={setRate} suffix="%" step={0.1} />
@@ -33,15 +33,15 @@ export default function Hipoteca() {
 
       <div className="mt-5 grid gap-3 sm:grid-cols-3">
         <div className="result-card">
-          <p className="text-sm text-gray-600">Cuota mensual</p>
+          <p className="text-sm text-ink-600">Cuota mensual</p>
           <p className="text-2xl font-bold text-brand-700">{formatEUR(payment)}</p>
         </div>
         <div className="result-card">
-          <p className="text-sm text-gray-600">Intereses totales</p>
+          <p className="text-sm text-ink-600">Intereses totales</p>
           <p className="text-2xl font-bold text-brand-700">{formatEUR(totalInterest)}</p>
         </div>
         <div className="result-card">
-          <p className="text-sm text-gray-600">Total a pagar</p>
+          <p className="text-sm text-ink-600">Total a pagar</p>
           <p className="text-2xl font-bold text-brand-700">{formatEUR(totalPaid)}</p>
         </div>
       </div>
@@ -54,9 +54,9 @@ export default function Hipoteca() {
       </button>
 
       {showTable && (
-        <div className="mt-4 max-h-96 overflow-auto rounded-lg border border-gray-200">
+        <div className="mt-4 max-h-96 overflow-auto rounded-xl border border-ink-200">
           <table className="w-full text-sm">
-            <thead className="sticky top-0 bg-gray-50 text-left text-gray-600">
+            <thead className="sticky top-0 bg-ink-50 text-left text-ink-600">
               <tr>
                 <th className="px-3 py-2">Mes</th>
                 <th className="px-3 py-2">Cuota</th>
@@ -67,7 +67,7 @@ export default function Hipoteca() {
             </thead>
             <tbody>
               {schedule.map((r) => (
-                <tr key={r.month} className="border-t border-gray-100">
+                <tr key={r.month} className="border-t border-ink-100">
                   <td className="px-3 py-1.5">{r.month}</td>
                   <td className="px-3 py-1.5">{formatEUR(r.payment)}</td>
                   <td className="px-3 py-1.5 text-red-600">{formatEUR(r.interest)}</td>

@@ -82,7 +82,7 @@ export default function Nomina() {
   const r = useMemo(() => calcularNomina(bruto, pagas), [bruto, pagas]);
 
   return (
-    <div className="rounded-xl border border-gray-200 p-5">
+    <div className="surface-card p-5">
       <div className="grid gap-4 sm:grid-cols-2">
         <Field
           label="Salario bruto anual"
@@ -107,27 +107,27 @@ export default function Nomina() {
       {/* Resultado principal */}
       <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <div className="result-card border-brand-500 bg-brand-100 lg:col-span-1">
-          <p className="text-sm text-gray-700">Neto por paga</p>
+          <p className="text-sm text-ink-700">Neto por paga</p>
           <p className="text-3xl font-bold text-brand-700">{formatEUR(r.netoPaga)}</p>
-          <p className="mt-1 text-xs text-gray-500">{pagas} pagas al año</p>
+          <p className="mt-1 text-xs text-ink-500">{pagas} pagas al año</p>
         </div>
         <div className="result-card">
-          <p className="text-sm text-gray-600">Neto anual</p>
+          <p className="text-sm text-ink-600">Neto anual</p>
           <p className="text-xl font-bold text-brand-700">{formatEUR(r.netoAnual)}</p>
         </div>
         <div className="result-card">
-          <p className="text-sm text-gray-600">Coste total para empresa</p>
-          <p className="text-xl font-bold text-gray-700">
+          <p className="text-sm text-ink-600">Coste total para empresa</p>
+          <p className="text-xl font-bold text-ink-700">
             {formatEUR(r.brutoAnual * 1.3)}
           </p>
-          <p className="mt-0.5 text-xs text-gray-400">~30% SS empresa</p>
+          <p className="mt-0.5 text-xs text-ink-400">~30% SS empresa</p>
         </div>
       </div>
 
       {/* Desglose completo */}
-      <div className="mt-5 rounded-lg border border-gray-200 overflow-hidden">
+      <div className="mt-5 rounded-xl border border-ink-200 overflow-hidden">
         <table className="w-full text-sm">
-          <thead className="bg-gray-50 text-left text-gray-600">
+          <thead className="bg-ink-50 text-left text-ink-600">
             <tr>
               <th className="px-4 py-2">Concepto</th>
               <th className="px-4 py-2 text-right">Anual</th>
@@ -135,12 +135,12 @@ export default function Nomina() {
             </tr>
           </thead>
           <tbody>
-            <tr className="border-t border-gray-100">
-              <td className="px-4 py-2 text-gray-700">Salario bruto</td>
+            <tr className="border-t border-ink-100">
+              <td className="px-4 py-2 text-ink-700">Salario bruto</td>
               <td className="px-4 py-2 text-right font-medium">{formatEUR(r.brutoAnual)}</td>
-              <td className="px-4 py-2 text-right text-gray-500">{formatEUR(r.brutoAnual / 12)}</td>
+              <td className="px-4 py-2 text-right text-ink-500">{formatEUR(r.brutoAnual / 12)}</td>
             </tr>
-            <tr className="border-t border-gray-100 bg-red-50/40">
+            <tr className="border-t border-ink-100 bg-red-50/40">
               <td className="px-4 py-2 text-red-700">
                 − Seguridad Social (6,35%)
                 <span className="ml-1 text-xs text-red-400">CC 4,7% + Des. 1,55% + FP 0,1%</span>
@@ -148,7 +148,7 @@ export default function Nomina() {
               <td className="px-4 py-2 text-right text-red-600">−{formatEUR(r.ssAnual)}</td>
               <td className="px-4 py-2 text-right text-red-400">−{formatEUR(r.ssMensual)}</td>
             </tr>
-            <tr className="border-t border-gray-100 bg-red-50/40">
+            <tr className="border-t border-ink-100 bg-red-50/40">
               <td className="px-4 py-2 text-red-700">
                 − Retención IRPF
                 <span className="ml-1 text-xs text-red-400">
@@ -167,7 +167,7 @@ export default function Nomina() {
         </table>
       </div>
 
-      <p className="mt-3 text-xs text-gray-400">
+      <p className="mt-3 text-xs text-ink-400">
         Estimación orientativa. Incluye reducción por rendimientos del trabajo según escala estatal 2026.
         La retención real puede variar según situación personal, deducciones y comunidad autónoma.
       </p>
