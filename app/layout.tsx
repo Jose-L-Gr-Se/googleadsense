@@ -48,12 +48,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-        {/* Script de AdSense: siempre presente para verificación y aprobación */}
-        <Script
+        {/* Script de AdSense: etiqueta estática para que el bot de Google lo detecte */}
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script
           async
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${client}`}
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
         {gaId && (
           <>
