@@ -7,30 +7,48 @@
 }
 
 body {
-  @apply bg-white text-gray-800 antialiased;
+  @apply bg-ink-50 text-ink-700 antialiased;
 }
 
 /* Estilos reutilizables para las calculadoras */
 @layer components {
   .field-label {
-    @apply mb-1 block text-sm font-medium text-gray-700;
+    @apply mb-1.5 block text-sm font-medium text-ink-700;
   }
   .field-input {
-    @apply w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100;
+    @apply w-full rounded-xl border border-ink-200 bg-white px-3.5 py-2.5 text-ink-900 outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-100;
   }
   .btn-primary {
-    @apply rounded-lg bg-brand-600 px-5 py-2.5 font-semibold text-white transition hover:bg-brand-700;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-5 py-2.5 font-semibold text-white shadow-sm transition hover:bg-brand-700 hover:shadow-card-hover active:scale-[0.98];
   }
   .result-card {
-    @apply rounded-xl border border-brand-100 bg-brand-50 p-5;
+    @apply rounded-2xl border border-brand-100 bg-brand-50 p-5;
+  }
+  .surface-card {
+    @apply rounded-2xl border border-ink-200 bg-white shadow-card;
   }
   .prose-article h2 {
-    @apply mt-8 mb-3 text-xl font-bold text-gray-900;
+    @apply mt-9 mb-3 text-xl font-bold tracking-tight text-ink-900;
+  }
+  .prose-article h3 {
+    @apply mt-6 mb-2 text-lg font-semibold text-ink-900;
   }
   .prose-article p {
-    @apply mb-4 leading-relaxed text-gray-700;
+    @apply mb-4 leading-relaxed text-ink-700;
   }
   .prose-article ul {
-    @apply mb-4 list-disc space-y-1 pl-5 text-gray-700;
+    @apply mb-4 list-disc space-y-1.5 pl-5 text-ink-700;
+  }
+  .prose-article a {
+    @apply text-brand-600 underline decoration-brand-200 underline-offset-2 transition hover:decoration-brand-500;
+  }
+}
+
+@layer utilities {
+  /* Fondo con gradiente suave para secciones hero */
+  .bg-hero-glow {
+    background:
+      radial-gradient(60% 60% at 50% 0%, rgba(59, 102, 245, 0.10) 0%, rgba(59, 102, 245, 0) 70%),
+      linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   }
 }

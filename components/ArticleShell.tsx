@@ -17,19 +17,19 @@ export default function ArticleShell({ meta, children }: Props) {
   });
 
   return (
-    <div className="mx-auto grid max-w-5xl gap-8 px-4 py-8 lg:grid-cols-[1fr_300px]">
+    <div className="mx-auto grid max-w-6xl gap-8 px-4 py-8 lg:grid-cols-[1fr_300px]">
       <div className="min-w-0">
-        <nav className="mb-4 text-sm text-gray-500">
+        <nav className="mb-4 text-sm text-ink-500">
           <Link href="/" className="hover:text-brand-600">Inicio</Link>
           <span className="mx-2">/</span>
           <Link href="/blog" className="hover:text-brand-600">Blog</Link>
           <span className="mx-2">/</span>
-          <span className="text-gray-700">{meta.title}</span>
+          <span className="text-ink-700">{meta.title}</span>
         </nav>
 
-        <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">{meta.title}</h1>
+        <h1 className="text-2xl font-bold tracking-tight text-ink-900 sm:text-3xl">{meta.title}</h1>
 
-        <div className="mt-2 flex gap-3 text-sm text-gray-500">
+        <div className="mt-2 flex gap-3 text-sm text-ink-500">
           <time dateTime={meta.date}>{dateFormatted}</time>
           <span>·</span>
           <span>{meta.readTime} min de lectura</span>
@@ -42,16 +42,16 @@ export default function ArticleShell({ meta, children }: Props) {
         </div>
 
         <section className="mt-10">
-          <h2 className="mb-3 text-xl font-bold text-gray-900">Artículos relacionados</h2>
+          <h2 className="mb-3 text-xl font-bold tracking-tight text-ink-900">Artículos relacionados</h2>
           <ul className="space-y-3">
             {related.map((a) => (
               <li key={a.slug}>
                 <Link
                   href={`/blog/${a.slug}`}
-                  className="block rounded-lg border border-gray-200 px-4 py-3 hover:border-brand-500"
+                  className="block rounded-xl border border-ink-200 bg-white px-4 py-3 transition hover:border-brand-300 hover:shadow-card"
                 >
-                  <p className="font-medium text-gray-900 hover:text-brand-600">{a.title}</p>
-                  <p className="mt-0.5 text-sm text-gray-500">{a.description}</p>
+                  <p className="font-medium text-ink-900 hover:text-brand-600">{a.title}</p>
+                  <p className="mt-0.5 text-sm text-ink-500">{a.description}</p>
                 </Link>
               </li>
             ))}

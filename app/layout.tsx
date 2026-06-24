@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/lib/config";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -42,7 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const gaId = siteConfig.ga4MeasurementId;
 
   return (
-    <html lang="es">
+    <html lang="es" className={inter.variable}>
       <head>
         <script
           type="application/ld+json"
@@ -67,7 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </>
         )}
       </head>
-      <body className="flex min-h-screen flex-col">
+      <body className="flex min-h-screen flex-col font-sans">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
