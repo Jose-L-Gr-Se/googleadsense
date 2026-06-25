@@ -6,13 +6,15 @@ export type ArticleMeta = {
   slug: string;
   title: string;
   description: string;
-  date: string; // ISO
-  // keyword principal objetivo (para referencia interna SEO)
+  date: string; // ISO — fecha de publicación real o programada
   keyword: string;
-  // tiempo estimado de lectura en minutos
   readTime: number;
+  // false = borrador (no aparece en el blog ni en el sitemap)
+  published?: boolean;
 };
 
+// Artículos publicados (published: true por defecto si se omite el campo)
+// Para programar uno: añádelo con published: false y cámbialo a true al desplegarlo
 export const articles: ArticleMeta[] = [
   {
     slug: "hipoteca-200000-euros-cuota-mensual",
@@ -76,5 +78,36 @@ export const articles: ArticleMeta[] = [
     date: "2026-06-23",
     keyword: "cuanto ahorrar al mes",
     readTime: 5,
+  },
+  // --- Artículos programados (publicar semanalmente) ---
+  {
+    slug: "cuanto-me-queda-si-cobro-2000-euros-brutos",
+    title: "¿Cuánto me queda si cobro 2.000 € brutos al mes?",
+    description:
+      "Calcula exactamente cuánto cobrarás neto si tu salario bruto es 2.000 euros mensuales. IRPF, Seguridad Social y el desglose real de tu nómina.",
+    date: "2026-07-01",
+    keyword: "cuanto se cobra neto de 2000 euros brutos",
+    readTime: 5,
+    published: false,
+  },
+  {
+    slug: "indemnizacion-despido-improcedente-cuanto-cobro",
+    title: "Indemnización por despido improcedente: cuánto cobras exactamente",
+    description:
+      "Guía completa para calcular la indemnización por despido improcedente en España. Fórmula, ejemplos reales y qué tienes que revisar antes de firmar.",
+    date: "2026-07-08",
+    keyword: "indemnizacion despido improcedente cuanto cobro",
+    readTime: 7,
+    published: false,
+  },
+  {
+    slug: "plusvalia-municipal-quien-la-paga-y-cuanto",
+    title: "Plusvalía municipal al vender un piso: quién la paga y cuánto cuesta",
+    description:
+      "Todo lo que necesitas saber sobre la plusvalía municipal antes de vender tu casa. Cuánto pagarás, cómo calcularla y cuándo no tienes que pagar nada.",
+    date: "2026-07-15",
+    keyword: "plusvalia municipal quien la paga cuanto",
+    readTime: 6,
+    published: false,
   },
 ];

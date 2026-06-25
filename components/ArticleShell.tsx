@@ -9,7 +9,7 @@ type Props = {
 };
 
 export default function ArticleShell({ meta, children }: Props) {
-  const related = articles.filter((a) => a.slug !== meta.slug).slice(0, 3);
+  const related = articles.filter((a) => a.slug !== meta.slug && a.published !== false).slice(0, 3);
   const dateFormatted = new Date(meta.date).toLocaleDateString("es-ES", {
     year: "numeric",
     month: "long",

@@ -106,4 +106,28 @@ export const calculators: CalculatorMeta[] = [
       "Calcula tu cuota mensual de autónomo según tus rendimientos netos y el sistema de cotización por ingresos reales vigente.",
     keyword: "cuota autonomos 2026",
   },
+  {
+    slug: "indemnizacion-despido",
+    title: "Calculadora de indemnización por despido",
+    shortTitle: "Indemnización",
+    description:
+      "Calcula la indemnización que te corresponde por despido improcedente, objetivo o colectivo según los años trabajados y tu salario.",
+    keyword: "calculadora indemnizacion despido",
+  },
+  {
+    slug: "plusvalia-municipal",
+    title: "Calculadora de plusvalía municipal 2026",
+    shortTitle: "Plusvalía",
+    description:
+      "Calcula el impuesto de plusvalía municipal al vender o heredar un inmueble. Método objetivo y método real según la normativa vigente.",
+    keyword: "calculadora plusvalia municipal",
+  },
+  {
+    slug: "retencion-autonomos",
+    title: "Calculadora IRPF autónomos: modelo 130",
+    shortTitle: "IRPF autónomos",
+    description:
+      "Calcula el pago fraccionado trimestral de IRPF para autónomos (modelo 130) y estima tu factura fiscal anual.",
+    keyword: "modelo 130 autonomos calculo",
+  },
 ];

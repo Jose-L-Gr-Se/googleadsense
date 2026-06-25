@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   });
 
-  for (const a of articles) {
+  for (const a of articles.filter((a) => a.published !== false)) {
     entries.push({
       url: `${siteConfig.url}/blog/${a.slug}`,
       lastModified: new Date(a.date),

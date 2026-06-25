@@ -20,7 +20,7 @@ export default function BlogPage() {
       </p>
 
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {articles.map((a) => {
+        {articles.filter((a) => a.published !== false).map((a) => {
           const dateFormatted = new Date(a.date).toLocaleDateString("es-ES", {
             year: "numeric",
             month: "long",

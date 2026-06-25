@@ -75,6 +75,29 @@ export default function CalculatorIcon({ slug, className = "h-6 w-6" }: Props) {
           <path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6" />
         </svg>
       );
+    case "indemnizacion-despido":
+      return (
+        <svg {...common}>
+          <path d="M9 14l-4-4 4-4" />
+          <path d="M5 10h11a3 3 0 0 1 0 6h-1" />
+        </svg>
+      );
+    case "plusvalia-municipal":
+      return (
+        <svg {...common}>
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <path d="M9 22V12h6v10" />
+          <path d="M12 6v4m0 0l2-2m-2 2-2-2" />
+        </svg>
+      );
+    case "retencion-autonomos":
+      return (
+        <svg {...common}>
+          <rect x="3" y="4" width="18" height="16" rx="2" />
+          <path d="M8 9h8M8 13h5" />
+          <circle cx="15.5" cy="13.5" r="1.5" />
+        </svg>
+      );
     default:
       return (
         <svg {...common}>
