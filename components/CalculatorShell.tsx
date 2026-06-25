@@ -22,9 +22,35 @@ export default function CalculatorShell({
   article,
 }: Props) {
   const related = calculators.filter((c) => c.slug !== slug);
+  const url = `${siteConfig.url}/calculadora-${slug}`;
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        name: title,
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "Web",
+        url,
+        offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Inicio", item: siteConfig.url },
+          { "@type": "ListItem", position: 2, name: title, item: url },
+        ],
+      },
+    ],
+  };
 
   return (
     <div className="mx-auto grid max-w-6xl gap-8 px-4 py-8 lg:grid-cols-[1fr_300px]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       <div className="min-w-0">
         <nav className="mb-4 text-sm text-ink-500">
           <Link href="/" className="hover:text-brand-600">Inicio</Link>

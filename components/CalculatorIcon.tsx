@@ -68,6 +68,13 @@ export default function CalculatorIcon({ slug, className = "h-6 w-6" }: Props) {
           <path d="M16 7.5c0-1.4-1.8-2.5-4-2.5s-4 1.1-4 2.5S9.8 10 12 10s4 1.1 4 2.5-1.8 2.5-4 2.5-4-1.1-4-2.5" />
         </svg>
       );
+    case "autonomos":
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="7.5" r="3.5" />
+          <path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6" />
+        </svg>
+      );
     default:
       return (
         <svg {...common}>

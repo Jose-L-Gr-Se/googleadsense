@@ -13,15 +13,16 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:py-20">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3.5 py-1.5 text-sm font-medium text-brand-700 shadow-sm">
             <span className="h-2 w-2 rounded-full bg-brand-500" />
-            7 calculadoras financieras actualizadas a 2026
+            {calculators.length} calculadoras financieras actualizadas a 2026
           </span>
           <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-bold tracking-tight text-ink-900 sm:text-5xl">
             Tus números claros antes de{" "}
             <span className="text-brand-600">tomar decisiones de dinero</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-ink-600">
-            Calcula tu hipoteca, préstamos, IVA, IRPF, nómina, interés compuesto y
-            finiquito. Resultados al instante, con el desglose completo y explicado.
+            Calcula tu hipoteca, préstamos, IVA, IRPF, nómina, cuota de autónomos,
+            interés compuesto y finiquito. Resultados al instante, con el desglose
+            completo y explicado.
           </p>
 
           <div className="mt-7 flex flex-wrap justify-center gap-2">

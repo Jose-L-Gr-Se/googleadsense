@@ -4,7 +4,7 @@ import { articles } from "@/lib/articles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const staticPages = ["", "/privacidad", "/aviso-legal", "/sobre-nosotros"];
+  const staticPages = ["", "/privacidad", "/cookies", "/aviso-legal", "/sobre-nosotros"];
 
   const entries: MetadataRoute.Sitemap = staticPages.map((path) => ({
     url: `${siteConfig.url}${path}`,

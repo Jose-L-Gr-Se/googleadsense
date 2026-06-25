@@ -98,4 +98,12 @@ export const calculators: CalculatorMeta[] = [
       "Calcula tu salario neto a partir del bruto. Descuenta la Seguridad Social y el IRPF y ve exactamente cuánto cobrarás cada mes.",
     keyword: "calculadora nomina bruto neto",
   },
+  {
+    slug: "autonomos",
+    title: "Calculadora de cuota de autónomos 2026",
+    shortTitle: "Autónomos",
+    description:
+      "Calcula tu cuota mensual de autónomo según tus rendimientos netos y el sistema de cotización por ingresos reales vigente.",
+    keyword: "cuota autonomos 2026",
+  },
 ];
